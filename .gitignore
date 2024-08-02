@@ -5,6 +5,9 @@
 # dSYM
 *.dSYM
 
+# vscode
+.vscode/
+
 
 ## User settings
 xcuserdata/
