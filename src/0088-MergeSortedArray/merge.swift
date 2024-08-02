@@ -1,6 +1,6 @@
 
 func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
-    // double pointers, one points of the tail element of nums1
+    // double pointers, one points the tail element of nums1
     // the other points to the tail of nums2
     var p1 = m - 1
     var p2 = n - 1
@@ -8,7 +8,7 @@ func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
     // from the end of nums1 to fill the elements
     let total = m + n - 1
 
-    // can not iterate n...1, becasue the final element muay be in nums2. 
+    // can not iterate n...1, becasue the final element muy be in nums2. 
     // thus the element will not be moved to nums1
     for i in stride(from: total, to: -1, by: -1) {
 
