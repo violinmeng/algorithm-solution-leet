@@ -1,15 +1,4 @@
-class ListNode {
-    var val: Int
-    var next: ListNode?
-    init() { self.val = 0; self.next = nil; }
-    init(_ val: Int) { self.val = val; self.next = nil; }
-    init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
-
-    list(from array:[]) -> ListNode {
-        
-    }
-}
-
+// listNode defined in the BaseSwift/LinkList.swift
 func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     var head = ListNode() // this is a placeholder node, to ease the logic pain.
     var tail = head
@@ -42,3 +31,8 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
 
     return head.next
 }
+
+// test code
+let l1 = linkList([2,4,3])
+let l2 = linkList([5,6,4])
+print(linkListDescription(addTwoNumbers(l1, l2)))
