@@ -6,33 +6,48 @@ class ListNode {
     init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
 }
 
-func linkList(with array:[Int]) ->ListNode? {
+class LinkList {
+    var head:ListNode?
     
-    var current:ListNode? = nil
-    var following:ListNode? = nil
-    for item in array.reversed() {
-        current = ListNode(item)
-        current?.next = following
-        following = current
+    init(head: ListNode? = nil) {
+        self.head = head
     }
-    return current
+    
+    init(with array:[Int]) {
+        self.head = linkList(with: array)
+    }
+    
+    func linkList(with array:[Int]) ->ListNode? {
+        
+        var current:ListNode? = nil
+        var following:ListNode? = nil
+        for item in array.reversed() {
+            current = ListNode(item)
+            current?.next = following
+            following = current
+        }
+        return current
+    }
+    
 }
 
-func linkListDescription(_ linkList:ListNode?) -> String {
-    var p = linkList
-    var desc = "link list: "
-    while p != nil {
-        if p !== linkList {
-            desc += " -> "
+extension LinkList:CustomStringConvertible {
+    public var description: String {
+        var p = head
+        var desc = "link list: "
+        while p != nil {
+            if p !== head {
+                desc += " -> "
+            }
+            if let val = p?.val {
+                desc += "\(val)"
+            } else {
+                desc += "nil"
+            }
+            p = p?.next
         }
-        if let val = p?.val {
-            desc += "\(val)"
-        } else {
-            desc += "nil"
-        }
-        p = p?.next
+        return desc
     }
-    return desc
 }
 
-// print(linkListDescription(linkList(with: [1,2,3,4,5])))
+// print(LinkList(with: [1,2,3,4,5]))

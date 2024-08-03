@@ -11,4 +11,4 @@ func swapPairsRecursive(_ head: ListNode?) -> ListNode? {
 }
 
 // test code
-print(linkListDescription(swapPairsRecursive(linkList([1,2,3,4]))))
+print(LinkList(swapPairsRecursive(LinkList([1,2,3,4]))))

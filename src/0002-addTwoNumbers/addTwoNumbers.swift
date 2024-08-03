@@ -33,6 +33,6 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
 }
 
 // test code
-let l1 = linkList([2,4,3])
-let l2 = linkList([5,6,4])
-print(linkListDescription(addTwoNumbers(l1, l2)))
+let l1 = LinkList([2,4,3])
+let l2 = LinkList([5,6,4])
+print(LinkList(addTwoNumbers(l1, l2)))
