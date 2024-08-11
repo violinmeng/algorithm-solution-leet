@@ -1,4 +1,3 @@
-// 
 
 func isValidSudoku(_ board: [[Character]]) -> Bool {
     var rows = [[Bool]](repeating: [Bool](repeating: false, count: 9), count: 9)
