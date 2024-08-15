@@ -22,30 +22,6 @@ func countAndSay(_ n: Int) -> String {
     return ans
 }
 
-
-func countAndSay(_ n: Int) -> String {
-    
-    if n == 1 {
-        return "1"
-    }
-    
-    let lastStr = countAndSay(n-1);
-    var ans = ""
-    var cur = lastStr.first
-    var count = 0
-    for c in lastStr {
-        if c == cur {
-            count += 1
-        } else {
-            ans.append("\(count)"+"\(cur ?? Character(""))")
-            cur = c
-            count = 1
-        }
-    }
-    ans.append("\(count)"+"\(cur ?? Character(""))")
-    return ans
-}
-
 func countAndSayIterator(_ n: Int) -> String {
     var pre = "1"
 
