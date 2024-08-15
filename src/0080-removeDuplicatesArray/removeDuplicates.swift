@@ -19,7 +19,4 @@ func removeDuplicates(_ nums: inout [Int]) -> Int {
 }
 
 var nums = [0,0,1,1,1,2,2,3,3,4]
-let res = removeDuplicates(&nums)
-for idx in 0..<res {
-    print(nums[idx])
-}
+print(removeDuplicates&nums)
