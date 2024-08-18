@@ -27,11 +27,16 @@ func uniquePaths1(_ m: Int, _ n: Int) -> Int {
 // we can also calculate the result with math directly.
 // and that is factorial(m+n-2) / factorial(m-1) * factorial(n-1)
 // remembering the variable may be overflow because of the intermediate factorial result.
+// ans = (ans * y) / x
+// we must calculate the product of ans and y, then divide x
+// otherwise, if we get the quotient of dividing y by x first. the fractional part will lose.
+// the answer is going to be wrong.
+
 func uniquePaths2(_ m: Int, _ n: Int) -> Int {
     var ans: UInt64 = 1;
     var y = n
     for x in 1..<m {
-        ans *= x/y
+        ans = (ans * y) / x
         y += 1
     }
     return Int(ans);
