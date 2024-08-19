@@ -1,3 +1,7 @@
+// like insertion sort approach, take an interval from array at the index of i
+// and merge with the intervals which have been merged.
+// the interval may merge with serval intervals into one.
+// we need take this case into count.
 func merge(_ intervals: [[Int]]) -> [[Int]] {
     guard let first = intervals.first else {
         return intervals
@@ -12,6 +16,7 @@ func merge(_ intervals: [[Int]]) -> [[Int]] {
             let item = ans[aidx]
             if let curFirst = cur.first, let curLast = cur.last, let itemFirst = item.first, let itemLast = item.last {
                 if curFirst >= itemFirst && curFirst <= itemLast {
+                    // update the cur interval, and merge with the intervals afterwards if needed.
                     cur = [itemFirst, max(curLast, itemLast)]
                 } else if itemFirst >= curFirst && itemFirst <= curLast {
                     cur = [curFirst, max(curLast, itemLast)]
@@ -27,6 +32,8 @@ func merge(_ intervals: [[Int]]) -> [[Int]] {
 
 }
 
+// if we sort the interval by the starting value,
+// the merging algorithm is going to be more intuitive and simple.
 func merge1(_ intervals: [[Int]]) -> [[Int]] {
     guard intervals.count > 1 else { return intervals }
     let sortedIntervals = intervals.sorted { $0[0] < $1[0] }
