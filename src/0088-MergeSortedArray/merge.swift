@@ -24,7 +24,7 @@ func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         var bigger:Int
 
         // get the bigger element between the pointed elements, and move the pointer, respectively
-        // no force unwrapping version
+        // no force unwrapping version, better style of code, maybe.
         if let ue2 = e2 {
             if let ue1 = e1, ue1 > ue2 {
                 p1 -= 1
