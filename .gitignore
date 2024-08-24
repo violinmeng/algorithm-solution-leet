@@ -8,6 +8,8 @@
 # vscode
 .vscode/
 
+# build
+build/
 
 ## User settings
 xcuserdata/
