@@ -1,0 +1,85 @@
+pub fn can_partition_k_subsets(nums: Vec<i32>, k: i32) -> bool {
+
+    let sum = nums.iter().sum::<i32>();
+    if sum % k != 0 {
+        return false;
+    }
+    let target = sum / k;
+    let mut nums = nums.to_vec();
+    nums.sort();
+    if *nums.last().unwrap() > target {
+        return false;
+    }
+
+    let n = nums.len();
+    let mut dp = vec![true; 1<<n];
+
+    fn dfs(s: i32, p: i32, target: i32, dp: &mut Vec<bool>, nums: &[i32]) -> bool {
+        if s == 0 {
+            return true
+        }
+        if !dp[s as usize] {
+            return false;
+        }
+        dp[s as usize] = false;
+        for i in 0..nums.len() {
+            if nums[i] + p > target {
+                break;
+            }
+            if s & (1 << i) == 0 {
+                continue;
+            }
+            if dfs(s ^ (1 << i), (p + nums[i]) % target, target, dp, nums) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    return dfs((1 << n) - 1, 0, target, &mut dp, &nums);
+}
+
+pub fn can_partition_k_subsets_slow(nums: Vec<i32>, k: i32) -> bool {
+
+    let sum = nums.iter().sum::<i32>();
+    if sum % k != 0 {
+        return false;
+    }
+
+    let target = sum / k;
+    let mut used = vec![false; nums.len()];
+    let mut groups = vec![0; k as usize];
+    let mut res = false;
+    dfs_no_cache(&nums, &mut used, &mut groups, 0, target, &mut res);
+    res
+}
+
+fn dfs_no_cache(nums: &[i32], used: &mut Vec<bool>, groups: &mut Vec<i32>, idx: usize, target: i32, res: &mut bool) {
+    if idx == nums.len() {
+        *res = true;
+        return;
+    }
+    if *res {
+        return;
+    }
+    for i in 0..groups.len() {
+        if groups[i] + nums[idx] > target {
+            continue;
+        }
+        if used[idx] {
+            continue;
+        }
+        groups[i] += nums[idx];
+        used[idx] = true;
+        dfs_no_cache(nums, used, groups, idx + 1, target, res);
+        used[idx] = false;
+        groups[i] -= nums[idx];
+    }
+}
+
+#[test]
+fn test() {
+    assert_eq!(can_partition_k_subsets(vec![4, 3, 2, 3, 5, 2, 1], 4), true);
+    assert_eq!(can_partition_k_subsets(vec![1, 2, 3, 4], 3), false);
+    assert_eq!(can_partition_k_subsets(vec![1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5], 5), true);
+}
