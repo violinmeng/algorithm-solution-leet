@@ -1,0 +1,9 @@
+[package]
+name = "excutor"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sln-3kto4k = { path = "../sln-3kto4k" }

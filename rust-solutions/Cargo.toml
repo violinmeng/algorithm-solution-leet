@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "excutor",
+    "sln-3kto4k",
+]
+resolver = "2"

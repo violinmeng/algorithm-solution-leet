@@ -20,8 +20,14 @@ pub fn result_array(nums: Vec<i32>) -> Vec<i32> {
     return arr1;
 }
 
-fn main() {
-    let nums = vec![2,1,3];
-    let result = result_array(nums);
-    println!("result: {:?}", result);
+// Testing in place.
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_result_array() {
+        let nums = vec![2,1,3];
+        let result = result_array(nums);
+        assert_eq!(result, vec![2,3,1]);
+    }
 }

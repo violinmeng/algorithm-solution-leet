@@ -6,6 +6,20 @@ use std::convert::TryInto;
 // for each character, we can find its index in the map,
 // and then we can get the difference between the index and the current index.
 // the sum of all differences is the result.
+
+/// # Doc test
+/// 
+/// ```
+/// use sln_3kto4k::solutions::find_permutation_difference;
+/// 
+/// let s = "abc".to_string();
+/// let t = "bac".to_string();
+/// assert_eq!(2, find_permutation_difference(s, t));
+/// let s = "abcde".to_string();
+/// let t = "edbac".to_string();
+/// assert_eq!(12, find_permutation_difference(s, t));
+/// 
+/// ```
 pub fn find_permutation_difference(s: String, t: String) -> i32 {
     let mut s_counts = [0; 26];
     for (i, c) in s.chars().enumerate() {
@@ -16,13 +30,4 @@ pub fn find_permutation_difference(s: String, t: String) -> i32 {
         diff += s_counts[c as usize - 'a' as usize].abs_diff(i);
     }
     diff.try_into().unwrap()
-}
-
-fn main() {
-    let s = "abc".to_string();
-    let t = "bac".to_string();
-    println!("1: {}", find_permutation_difference(s, t));
-    let s = "abcde".to_string();
-    let t = "edbac".to_string();
-    println!("2: {}", find_permutation_difference(s, t));
 }

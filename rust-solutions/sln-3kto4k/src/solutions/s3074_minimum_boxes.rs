@@ -17,11 +17,17 @@ pub fn minimum_boxes(apple: Vec<i32>, capacity: Vec<i32>) -> i32 {
     0
 }
 
-fn main () {
-    let apples = vec![1,3,2];
-    let capacity = vec![4,3,1,5,2];
-    println!("{}", minimum_boxes(apples, capacity));
-    let apples = vec![5,5,5];
-    let capacity = vec![2,4,2,7];
-    println!("{}", minimum_boxes(apples, capacity));
+#[cfg(test)]
+mod test {
+    use super::minimum_boxes;
+
+    #[test]
+    fn test_minimum_boxes() {
+        let apples = vec![1,3,2];
+        let capacity = vec![4,3,1,5,2];
+        assert_eq!(minimum_boxes(apples, capacity), 2);
+        let apples = vec![5,5,5];
+        let capacity = vec![2,4,2,7];
+        assert_eq!(minimum_boxes(apples, capacity), 4);
+    }
 }
