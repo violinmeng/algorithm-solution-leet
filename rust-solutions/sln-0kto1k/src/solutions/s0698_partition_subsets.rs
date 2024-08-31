@@ -98,14 +98,8 @@ fn dfs_no_cache(nums: &[i32], used: &mut Vec<bool>, groups: &mut Vec<i32>, idx: 
     }
 }
 
-#[test]
-fn test() {
-    assert_eq!(can_partition_k_subsets(vec![4, 3, 2, 3, 5, 2, 1], 4), true);
-    assert_eq!(can_partition_k_subsets(vec![1, 2, 3, 4], 3), false);
-    assert_eq!(can_partition_k_subsets(vec![1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5], 5), true);
-}
-
-fn main() {
+#[allow(dead_code)]
+fn benchmarks() {
     let start = Instant::now();
     for _i in 0..10000 {
         can_partition_k_subsets(vec![1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5], 5);
@@ -118,3 +112,22 @@ fn main() {
     }
     println!("cost: {:#?}", start.elapsed());
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_can_partition_k_subsets() {
+        assert_eq!(can_partition_k_subsets(vec![4, 3, 2, 3, 5, 2, 1], 4), true);
+        assert_eq!(can_partition_k_subsets(vec![1, 2, 3, 4], 3), false);
+        assert_eq!(can_partition_k_subsets(vec![1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5], 5), true);
+
+        assert_eq!(can_partition_k_subsets_no_cache(vec![4, 3, 2, 3, 5, 2, 1], 4), true);
+        assert_eq!(can_partition_k_subsets_no_cache(vec![1, 2, 3, 4], 3), false);
+        assert_eq!(can_partition_k_subsets_no_cache(vec![1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5], 5), true);
+
+        assert_eq!(can_partition_k_subsets_v2(vec![4, 3, 2, 3, 5, 2, 1], 4), true);
+        assert_eq!(can_partition_k_subsets_v2(vec![1, 2, 3, 4], 3), false);
+        assert_eq!(can_partition_k_subsets_v2(vec![1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5], 5), true);
+    }
+} 

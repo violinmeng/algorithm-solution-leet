@@ -1,12 +1,12 @@
 use std::collections::HashMap;
 
-struct Employee {
+pub struct Employee {
     id: i32,
     importance: i32,
     subordinates: Vec<i32>,
 }
 
-enum IntOrArray {
+pub enum IntOrArray {
     Int(i32),
     Array(Vec<i32>),
 }
@@ -36,7 +36,7 @@ impl Employee {
     }
 }
 
-fn get_importance(employees: &Vec<Employee>, id: i32) -> i32 {
+pub fn get_importance(employees: &Vec<Employee>, id: i32) -> i32 {
     let mut map = HashMap::new();
     employees.iter().for_each(|e| {
         map.insert(e.id, e);
@@ -52,7 +52,8 @@ fn get_importance(employees: &Vec<Employee>, id: i32) -> i32 {
     dfs(&map, id)
 }
 
-macro_rules! dsl {
+#[macro_export]
+macro_rules! employ_vec {
     (
         $(
             [$id:expr, $importance:expr, [$($sub:expr),*]],
@@ -72,14 +73,18 @@ macro_rules! dsl {
     };
 }
 
-fn main() {
-    let parsed_dsl = dsl![
-        [1, 5, [2, 3]],
-        [2, 3, []],
-        [3, 3, []],
-    ];
-
-    let employees = Employee::from_vec(&parsed_dsl);
-    let result = get_importance(&employees, 1);
-    println!("{}",result);
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_get_importance() {
+        let parsed_dsl = employ_vec![
+            [1, 5, [2, 3]],
+            [2, 3, []],
+            [3, 3, []],
+        ];
+        let employees = Employee::from_vec(&parsed_dsl);
+        let result = get_importance(&employees, 1);
+        assert_eq!(result, 11);
+    }
 }
