@@ -17,3 +17,5 @@ pub use s0698_partition_subsets::can_partition_k_subsets_v2;
 
 mod s0045_jump_game2;
 pub use s0045_jump_game2::jump;
+pub use s0045_jump_game2::jump_v2;
+pub use s0045_jump_game2::jump_v3;
