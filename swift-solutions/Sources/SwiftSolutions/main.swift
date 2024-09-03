@@ -14,3 +14,10 @@ print(twoSum(nums, 9))
 
 
 print(LinkList(head:partition(LinkList.from(array: [1,4,3,2,5,2]).head, 3)))
+
+print(grayCode(0))
+print(grayCode(1))
+print(grayCode(2))
+print(grayCode(3))
+print(grayCode(4))
+

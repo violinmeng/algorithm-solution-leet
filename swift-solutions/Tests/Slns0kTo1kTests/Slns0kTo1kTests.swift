@@ -30,4 +30,9 @@ final class SwiftSolutionsTests: XCTestCase {
         let expect = LinkList.from(array: [1,2,2,4,3,5])
         XCTAssertEqual(res, expect)
     }
+    
+    func testGrayCode() throws {
+        XCTAssertEqual(grayCode(2), [0,1,3,2])
+        XCTAssertEqual(grayCodeV2(2), [0,1,3,2])
+    }
 }
