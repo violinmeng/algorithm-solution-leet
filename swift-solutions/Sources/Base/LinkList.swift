@@ -28,9 +28,13 @@ public class LinkList {
         return current
     }
     
+    public static func from(array:[Int]) -> LinkList? {
+        return LinkList(with: array)
+    }
+    
 }
 
-extension LinkList:CustomStringConvertible {
+extension LinkList: CustomStringConvertible {
     public var description: String {
         var p = head
         var desc = "link list: "
@@ -46,6 +50,24 @@ extension LinkList:CustomStringConvertible {
             p = p?.next
         }
         return desc
+    }
+}
+
+extension LinkList : Equatable {
+    public static func == (lhs: LinkList, rhs: LinkList) -> Bool {
+        var p1 = lhs.head
+        var p2 = rhs.head
+        while p1 != nil && p2 != nil {
+            if p1!.val != p2!.val {
+                return false
+            }
+            p1 = p1?.next
+            p2 = p2?.next
+        }
+        if p1 == nil && p2 == nil {
+            return true
+        }
+        return false
     }
 }
 
