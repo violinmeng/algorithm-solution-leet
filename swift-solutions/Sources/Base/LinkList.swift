@@ -28,7 +28,7 @@ public class LinkList {
         return current
     }
     
-    public static func from(array:[Int]) -> LinkList? {
+    public static func from(array:[Int]) -> LinkList {
         return LinkList(with: array)
     }
     

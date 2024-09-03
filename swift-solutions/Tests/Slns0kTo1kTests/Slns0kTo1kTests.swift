@@ -26,8 +26,14 @@ final class SwiftSolutionsTests: XCTestCase {
     }
     
     func testRotateList() throws {
-        let res = LinkList(head:rotateRight(LinkList.from(array: [1,2,3,4,5])?.head, 2))
+        let res = LinkList(head:rotateRight(LinkList.from(array: [1,2,3,4,5]).head, 2))
         let expect = LinkList.from(array: [4,5,1,2,3])
+        XCTAssertEqual(res, expect)
+    }
+    
+    func testPartitionList() throws {
+        let res = LinkList(head:partition(LinkList.from(array: [1,4,3,2,5,2]).head, 3))
+        let expect = LinkList.from(array: [1,2,2,4,3,5])
         XCTAssertEqual(res, expect)
     }
 }

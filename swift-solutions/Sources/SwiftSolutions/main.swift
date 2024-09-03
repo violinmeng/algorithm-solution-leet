@@ -11,3 +11,6 @@ print(getImportanceV2(Employee.from([[1,5,[2,3]],[2,3,[]],[3,3,[]]]),1))
 
 let nums = [2,7,11,15]
 print(twoSum(nums, 9))
+
+
+print(LinkList(head:partition(LinkList.from(array: [1,4,3,2,5,2]).head, 3)))
