@@ -1,24 +1,23 @@
-class ListNode {
-    var val: Int
-    var next: ListNode?
-    init() { self.val = 0; self.next = nil; }
-    init(_ val: Int) { self.val = val; self.next = nil; }
-    init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init() { self.val = 0; self.next = nil; }
+    public init(_ val: Int) { self.val = val; self.next = nil; }
+    public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
 }
 
-class LinkList {
-    var head:ListNode?
+public class LinkList {
+    public var head:ListNode?
     
-    init(head: ListNode? = nil) {
+    public init(head: ListNode? = nil) {
         self.head = head
     }
     
-    init(with array:[Int]) {
+    public init(with array:[Int]) {
         self.head = linkList(with: array)
     }
     
-    func linkList(with array:[Int]) ->ListNode? {
-        
+    public func linkList(with array:[Int]) ->ListNode? {
         var current:ListNode? = nil
         var following:ListNode? = nil
         for item in array.reversed() {
@@ -50,4 +49,3 @@ extension LinkList:CustomStringConvertible {
     }
 }
 
-// print(LinkList(with: [1,2,3,4,5]))

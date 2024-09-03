@@ -1,13 +1,13 @@
-public class Employee {
-    public var id: Int
-    public var importance: Int
-    public var subordinates: [Int]
+open class Employee {
+    open var id: Int
+    open var importance: Int
+    open var subordinates: [Int]
     public init(_ id: Int, _ importance: Int, _ subordinates: [Int]) {
         self.id = id
         self.importance = importance
         self.subordinates = subordinates
     }
-    static func from(_ arr: [[Any]]) -> [Employee] {
+    public static func from(_ arr: [[Any]]) -> [Employee] {
         var employees = [Employee]()
         for i in 0..<arr.count {
             let ele = arr[i]
@@ -20,7 +20,7 @@ public class Employee {
     }
 }
 
-func getImportanceV2(_ employees: [Employee], _ id: Int) -> Int {
+public func getImportanceV2(_ employees: [Employee], _ id: Int) -> Int {
     var map: [Int: Employee] = [:]
     employees.forEach { map[$0.id] = $0 }
     
@@ -37,7 +37,7 @@ func getImportanceV2(_ employees: [Employee], _ id: Int) -> Int {
     return _dfs(id)
 }
 
-func getImportance(_ employees: [Employee], _ id: Int) -> Int {
+public func getImportance(_ employees: [Employee], _ id: Int) -> Int {
     var res = 0;
     dfs(employees, [id], &res)
     return res
@@ -55,6 +55,3 @@ func dfs(_ employees:[Employee], _ ids: [Int], _ importance: inout Int) {
         }
     }
 }
-
-print(getImportance(Employee.from([[1,5,[2,3]],[2,3,[]],[3,3,[]]]),1))
-print(getImportanceV2(Employee.from([[1,5,[2,3]],[2,3,[]],[3,3,[]]]),1))

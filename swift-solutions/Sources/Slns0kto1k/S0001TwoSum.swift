@@ -1,4 +1,4 @@
-func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+public func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
     var map = [Int: Int]()
     for (i, e) in nums.enumerated() {
         if let v = map[target - e] {
@@ -8,6 +8,3 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
     }
     return []
 }
-
-let nums = [2,7,11,15]
-print(twoSum(nums, 9))
