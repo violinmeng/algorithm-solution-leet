@@ -3,7 +3,8 @@
 members = [
     "excutor",
     "sln-0kto1k",
-    "sln-1kto2k",
+    "sln-1kto2k", 
+    "sln-2kto3k",
     "sln-3kto4k",
 ]
 resolver = "2"

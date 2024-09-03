@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 sln-0kto1k = { path = "../sln-0kto1k" }
 sln-1kto2k = { path = "../sln-1kto2k" }
+sln-2kto3k = { path = "../sln-2kto3k" }
 sln-3kto4k = { path = "../sln-3kto4k" }
