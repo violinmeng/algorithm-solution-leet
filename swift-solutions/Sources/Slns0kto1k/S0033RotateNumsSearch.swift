@@ -3,7 +3,7 @@
 // so we define the left and right pointers and narrow that range.
 // to cover each of case, we enumerate every case, then we can merge
 // those cases, and get the more concise version of the solution.
-func searchEnumeratedVersion(_ nums: [Int], _ target: Int) -> Int {
+public func searchEnumeratedVersion(_ nums: [Int], _ target: Int) -> Int {
 
     var left = 0
     var right = nums.count - 1
@@ -49,7 +49,7 @@ func searchEnumeratedVersion(_ nums: [Int], _ target: Int) -> Int {
     return nums[left] == target ? left : -1
 }
 
-func searchMergeCasesVersion(_ nums: [Int], _ target: Int) -> Int {
+public func searchMergeCasesVersion(_ nums: [Int], _ target: Int) -> Int {
 
     var left = 0
     var right = nums.count - 1
@@ -82,5 +82,3 @@ func searchMergeCasesVersion(_ nums: [Int], _ target: Int) -> Int {
     }
     return nums[left] == target ? left : -1
 }
-print(searchEnumeratedVersion([4,5,6,7,0,1,2], 3))
-print(searchMergeCasesVersion([4,5,6,7,0,1,2], 3))

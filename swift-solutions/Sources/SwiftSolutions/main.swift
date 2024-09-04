@@ -21,3 +21,6 @@ print(grayCode(2))
 print(grayCode(3))
 print(grayCode(4))
 
+
+print(searchEnumeratedVersion([4,5,6,7,0,1,2], 3))
+print(searchMergeCasesVersion([4,5,6,7,0,1,2], 3))

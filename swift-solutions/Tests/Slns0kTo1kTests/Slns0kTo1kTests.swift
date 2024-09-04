@@ -10,6 +10,7 @@ import XCTest
 // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
 
 final class SwiftSolutionsTests: XCTestCase {
+    
     func testTwoSum() throws {
         XCTAssertEqual(twoSum([2,7,11,15], 9), [0,1])
     }
@@ -35,4 +36,19 @@ final class SwiftSolutionsTests: XCTestCase {
         XCTAssertEqual(grayCode(2), [0,1,3,2])
         XCTAssertEqual(grayCodeV2(2), [0,1,3,2])
     }
+    
+    func testRotateNumsSearchII() throws {
+        XCTAssertEqual(rotateNumsSearchII([2,5,6,0,0,1,2], 0), true)
+        XCTAssertEqual(rotateNumsSearchII([2,5,6,0,0,1,2], 3), false)
+        XCTAssertEqual(rotateNumsSearchII([3], 3), true)
+        XCTAssertEqual(rotateNumsSearchII([3,1,2,3,3,3,3], 2), true)
+    }
+    
+    func testRotateNumsSearch() throws {
+        XCTAssertEqual(searchEnumeratedVersion([4,5,6,7,0,1,2], 0), 4)
+        XCTAssertEqual(searchMergeCasesVersion([4,5,6,7,0,1,2], 0), 4)
+        XCTAssertEqual(searchEnumeratedVersion([4,5,6,7,0,1,2], 3), -1)
+        XCTAssertEqual(searchMergeCasesVersion([4,5,6,7,0,1,2], 3), -1)
+    }
+    
 }
