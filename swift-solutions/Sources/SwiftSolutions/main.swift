@@ -2,6 +2,7 @@
 // https://docs.swift.org/swift-book
 
 import Slns0kTo1k
+import Slns3kTo4k
 import Base
 
 print(LinkList(with: [1,2,3,4,5]))
@@ -24,3 +25,7 @@ print(grayCode(4))
 
 print(searchEnumeratedVersion([4,5,6,7,0,1,2], 3))
 print(searchMergeCasesVersion([4,5,6,7,0,1,2], 3))
+
+
+print(clearDigits("cb34"))
+print(clearDigits("abc"))
