@@ -4,12 +4,11 @@
 // to cover each of case, we enumerate every case, then we can merge
 // those cases, and get the more concise version of the solution.
 public func searchEnumeratedVersion(_ nums: [Int], _ target: Int) -> Int {
-
     var left = 0
     var right = nums.count - 1
     var mid = (left + right) / 2
 
-    while (left < right) {
+    while left < right {
         if nums[left] < nums[mid] {
             if target > nums[left] {
                 if target < nums[mid] {
@@ -27,7 +26,6 @@ public func searchEnumeratedVersion(_ nums: [Int], _ target: Int) -> Int {
             }
 
         } else {
-
             if target > nums[left] {
                 left += 1
                 right = mid - 1
@@ -40,7 +38,7 @@ public func searchEnumeratedVersion(_ nums: [Int], _ target: Int) -> Int {
                 } else if target == nums[mid] {
                     return mid
                 } else {
-                    left = mid+1
+                    left = mid + 1
                 }
             }
         }
@@ -50,12 +48,11 @@ public func searchEnumeratedVersion(_ nums: [Int], _ target: Int) -> Int {
 }
 
 public func searchMergeCasesVersion(_ nums: [Int], _ target: Int) -> Int {
-
     var left = 0
     var right = nums.count - 1
     var mid = (left + right) / 2
 
-    while (left < right) {
+    while left < right {
         if nums[left] == target {
             return left
         }
@@ -64,14 +61,14 @@ public func searchMergeCasesVersion(_ nums: [Int], _ target: Int) -> Int {
         }
 
         if nums[left] < nums[mid] {
-            if (target < nums[left] || target > nums[mid]) {
+            if target < nums[left] || target > nums[mid] {
                 left = mid + 1
             } else {
                 left += 1
                 right = mid - 1
             }
         } else {
-            if (target < nums[left] && target > nums[mid]) {
+            if target < nums[left] && target > nums[mid] {
                 left = mid + 1
             } else {
                 left += 1

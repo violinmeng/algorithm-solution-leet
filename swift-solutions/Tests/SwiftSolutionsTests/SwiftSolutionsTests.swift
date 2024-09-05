@@ -1,6 +1,5 @@
-import XCTest
 @testable import SwiftSolutions
-
+import XCTest
 
 final class SwiftSolutionsTests: XCTestCase {
     func testExample() throws {

@@ -1,20 +1,19 @@
-
 import Base
 
-func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
-    guard let head = head, let _ = head.next, k != 0 else {
+func rotateRight(_ head: ListNode?, _ rotateIdx: Int) -> ListNode? {
+    guard let head = head, head.next != nil, rotateIdx != 0 else {
         return head
     }
 
-    var n = 1;
+    var listLength = 1
     var iter: ListNode? = head
     while iter?.next != nil {
         iter = iter?.next
-        n += 1
+        listLength += 1
     }
 
-    var counter = n - k % n
-    if counter == n {
+    var counter = listLength - rotateIdx % listLength
+    if counter == listLength {
         return head
     }
     iter?.next = head
@@ -26,5 +25,4 @@ func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
     let newHead = iter?.next
     iter?.next = nil
     return newHead
-
 }

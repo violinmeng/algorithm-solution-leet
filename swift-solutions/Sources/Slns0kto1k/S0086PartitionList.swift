@@ -1,19 +1,18 @@
-
 import Base
 
-public func partition(_ head: ListNode?, _ x: Int) -> ListNode? {
-    var lessHead:ListNode? = nil
-    var lessCur:ListNode? = nil
-    var greatHead:ListNode? = nil
-    var greatCur:ListNode? = nil
+public func partition(_ head: ListNode?, _ threshold: Int) -> ListNode? {
+    var lessHead: ListNode?
+    var lessCur: ListNode?
+    var greatHead: ListNode?
+    var greatCur: ListNode?
     var iter = head
     while let cur = iter {
-        if cur.val < x {
+        if cur.val < threshold {
             if lessHead == nil {
                 lessHead = cur
                 lessCur = cur
             } else {
-                lessCur?.next = cur;
+                lessCur?.next = cur
                 lessCur = cur
             }
         } else {
@@ -29,7 +28,7 @@ public func partition(_ head: ListNode?, _ x: Int) -> ListNode? {
     }
 
     if lessHead == nil {
-        return  greatHead
+        return greatHead
     }
 
     greatCur?.next = nil

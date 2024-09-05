@@ -1,11 +1,10 @@
-
-public func clearDigits(_ s: String) -> String {
+public func clearDigits(_ str: String) -> String {
     var stack: [Character] = []
-    for c in s {
-        if c.isWholeNumber {
+    for char in str {
+        if char.isWholeNumber {
             _ = stack.popLast()
         } else {
-            stack.append(c)
+            stack.append(char)
         }
     }
     return String(stack)
