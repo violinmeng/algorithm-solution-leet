@@ -44,6 +44,14 @@ final class SwiftSolutionsTests: XCTestCase {
         XCTAssertEqual(grayCodeV2(2), [0, 1, 3, 2])
     }
 
+    func testS0091NumDecodings() throws {
+        XCTAssertEqual(numDecodings("12"), 2)
+        XCTAssertEqual(numDecodings("226"), 3)
+        XCTAssertEqual(numDecodings("06"), 0)
+        XCTAssertEqual(numDecodings("10"), 1)
+        XCTAssertEqual(numDecodings("27"), 1)
+    }
+
     func testS0092ReverseLinkedListII() throws {
         let res = LinkList(head: reverseBetween(LinkList.from(array: [1, 2, 3, 4, 5]).head, 2, 4))
         let expect = LinkList.from(array: [1, 4, 3, 2, 5])
