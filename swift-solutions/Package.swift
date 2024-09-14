@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "swift-solutions",
+    platforms: [.macOS(.v12)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .executable(
@@ -33,6 +34,10 @@ let package = Package(
             name: "Base",
             targets: ["Base"]
         )
+    ],
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.57.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -90,3 +95,12 @@ let package = Package(
         )
     ]
 )
+
+#if os(macOS)
+package.targets.forEach { target in
+    if target.plugins == nil {
+        target.plugins = []
+    }
+    target.plugins?.append(.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins"))
+}
+#endif

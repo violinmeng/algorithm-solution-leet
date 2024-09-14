@@ -1,4 +1,3 @@
-
 @testable import Base
 @testable import Slns0kTo1k
 import XCTest
@@ -48,5 +47,10 @@ final class SwiftSolutionsTests: XCTestCase {
         XCTAssertEqual(searchMergeCasesVersion([4, 5, 6, 7, 0, 1, 2], 0), 4)
         XCTAssertEqual(searchEnumeratedVersion([4, 5, 6, 7, 0, 1, 2], 3), -1)
         XCTAssertEqual(searchMergeCasesVersion([4, 5, 6, 7, 0, 1, 2], 3), -1)
+    }
+
+    func testS0279NumSquares() throws {
+        XCTAssertEqual(numSquares(12), 3)
+        XCTAssertEqual(numSquares(13), 2)
     }
 }
