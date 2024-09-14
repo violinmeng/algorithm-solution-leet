@@ -96,7 +96,7 @@ let package = Package(
     ]
 )
 
-package.targets.forEach { target in
+for target in package.targets {
     if target.plugins == nil {
         target.plugins = []
     }

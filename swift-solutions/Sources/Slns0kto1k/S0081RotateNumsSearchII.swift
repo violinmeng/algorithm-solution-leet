@@ -8,7 +8,7 @@ public func rotateNumsSearchII(_ nums: [Int], _ target: Int) -> Bool {
             return true
         }
 
-        if nums[left] == nums[mid] && nums[right] == nums[mid] {
+        if nums[left] == nums[mid], nums[right] == nums[mid] {
             left += 1
             right -= 1
         } else if nums[left] <= nums[mid] {
@@ -19,7 +19,7 @@ public func rotateNumsSearchII(_ nums: [Int], _ target: Int) -> Bool {
                 right = mid - 1
             }
         } else {
-            if target < nums[left] && target > nums[mid] {
+            if target < nums[left], target > nums[mid] {
                 left = mid + 1
             } else {
                 left += 1

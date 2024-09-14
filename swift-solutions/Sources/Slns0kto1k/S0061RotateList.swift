@@ -1,7 +1,7 @@
 import Base
 
 func rotateRight(_ head: ListNode?, _ rotateIdx: Int) -> ListNode? {
-    guard let head = head, head.next != nil, rotateIdx != 0 else {
+    guard let head, head.next != nil, rotateIdx != 0 else {
         return head
     }
 

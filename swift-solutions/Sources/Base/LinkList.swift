@@ -36,7 +36,7 @@ public class LinkList {
     }
 
     public static func from(array: [Int]) -> LinkList {
-        return LinkList(with: array)
+        LinkList(with: array)
     }
 }
 
@@ -63,14 +63,14 @@ extension LinkList: Equatable {
     public static func == (lhs: LinkList, rhs: LinkList) -> Bool {
         var pointerl = lhs.head
         var pointer2 = rhs.head
-        while pointerl != nil && pointer2 != nil {
+        while pointerl != nil, pointer2 != nil {
             if pointerl!.val != pointer2!.val {
                 return false
             }
             pointerl = pointerl?.next
             pointer2 = pointer2?.next
         }
-        if pointerl == nil && pointer2 == nil {
+        if pointerl == nil, pointer2 == nil {
             return true
         }
         return false

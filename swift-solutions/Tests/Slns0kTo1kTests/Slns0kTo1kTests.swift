@@ -53,4 +53,10 @@ final class SwiftSolutionsTests: XCTestCase {
         XCTAssertEqual(numSquares(12), 3)
         XCTAssertEqual(numSquares(13), 2)
     }
+
+    func testS0092ReverseBetween() throws {
+        let res = LinkList(head: reverseBetween(LinkList.from(array: [1, 2, 3, 4, 5]).head, 2, 4))
+        let expect = LinkList.from(array: [1, 4, 3, 2, 5])
+        XCTAssertEqual(res, expect)
+    }
 }

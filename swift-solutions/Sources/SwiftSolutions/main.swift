@@ -26,3 +26,5 @@ print(searchMergeCasesVersion([4, 5, 6, 7, 0, 1, 2], 3))
 
 print(clearDigits("cb34"))
 print(clearDigits("abc"))
+
+print(LinkList(head: reverseBetween(LinkList.from(array: [1, 2, 3, 4, 5]).head, 2, 4)))

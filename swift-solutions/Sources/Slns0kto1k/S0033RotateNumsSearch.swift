@@ -68,7 +68,7 @@ public func searchMergeCasesVersion(_ nums: [Int], _ target: Int) -> Int {
                 right = mid - 1
             }
         } else {
-            if target < nums[left] && target > nums[mid] {
+            if target < nums[left], target > nums[mid] {
                 left = mid + 1
             } else {
                 left += 1

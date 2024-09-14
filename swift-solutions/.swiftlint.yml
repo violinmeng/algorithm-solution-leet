@@ -10,7 +10,6 @@ opt_in_rules:
   - multiline_parameters_brackets
   - sorted_imports
 excluded:
-  - Sources/CharcoalShared/Generated
   - .build
   - BuildTools/.build
   - vendor/bundle
