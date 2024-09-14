@@ -9,7 +9,7 @@ import XCTest
 // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
 
 final class SwiftSolutionsTests: XCTestCase {
-    func testClearDigits() throws {
+    func testS2390ClearDigits() throws {
         XCTAssertEqual(clearDigits("cb34"), "")
         XCTAssertEqual(clearDigits("abc"), "abc")
     }
