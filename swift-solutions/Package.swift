@@ -97,10 +97,10 @@ let package = Package(
 )
 
 #if os(macOS)
-for target in package.targets {
-    if target.plugins == nil {
-        target.plugins = []
+    for target in package.targets {
+        if target.plugins == nil {
+            target.plugins = []
+        }
+        target.plugins?.append(.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins"))
     }
-    target.plugins?.append(.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins"))
-}
 #endif

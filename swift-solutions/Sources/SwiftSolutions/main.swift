@@ -32,3 +32,5 @@ print(LinkList(head: reverseBetween(LinkList.from(array: [1, 2, 3, 4, 5]).head, 
 print(isInterleaveV3("aabcc", "dbbca", "aadbbcbcac"))
 print(isInterleaveV3("aabcc", "dbbca", "aadbbbaccc"))
 print(isInterleaveV3("", "", ""))
+
+print(Int(Int32.min))

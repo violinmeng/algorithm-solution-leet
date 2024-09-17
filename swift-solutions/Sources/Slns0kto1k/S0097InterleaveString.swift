@@ -33,13 +33,13 @@ public func isInterleaveV2(_ str1: String, _ str2: String, _ str3: String) -> Bo
     let chars3 = Array(str3)
     var vec = Array(repeating: Array(repeating: false, count: str2.count + 1), count: str1.count + 1)
     vec[0][0] = true
-    for idx in 0...str1.count {
-        for jdx in 0...str2.count {
+    for idx in 0 ... str1.count {
+        for jdx in 0 ... str2.count {
             if idx > 0 {
-                vec[idx][jdx] = vec[idx][jdx] || (vec[idx-1][jdx] && chars1[idx-1] == chars3[idx+jdx-1])
+                vec[idx][jdx] = vec[idx][jdx] || (vec[idx - 1][jdx] && chars1[idx - 1] == chars3[idx + jdx - 1])
             }
             if jdx > 0 {
-                vec[idx][jdx] = vec[idx][jdx] || (vec[idx][jdx-1] && chars2[jdx-1] == chars3[idx+jdx-1])
+                vec[idx][jdx] = vec[idx][jdx] || (vec[idx][jdx - 1] && chars2[jdx - 1] == chars3[idx + jdx - 1])
             }
         }
     }
@@ -61,13 +61,13 @@ public func isInterleaveV3(_ str1: String, _ str2: String, _ str3: String) -> Bo
     let chars3 = Array(str3)
     var vec = Array(repeating: false, count: str2.count + 1)
     vec[0] = true
-    for idx in 0...str1.count {
-        for jdx in 0...str2.count {
+    for idx in 0 ... str1.count {
+        for jdx in 0 ... str2.count {
             if idx > 0 {
-                vec[jdx] = (vec[jdx] && chars1[idx-1] == chars3[idx+jdx-1])
+                vec[jdx] = (vec[jdx] && chars1[idx - 1] == chars3[idx + jdx - 1])
             }
             if jdx > 0 {
-                vec[jdx] = vec[jdx] || (vec[jdx-1] && chars2[jdx-1] == chars3[idx+jdx-1])
+                vec[jdx] = vec[jdx] || (vec[jdx - 1] && chars2[jdx - 1] == chars3[idx + jdx - 1])
             }
         }
     }
