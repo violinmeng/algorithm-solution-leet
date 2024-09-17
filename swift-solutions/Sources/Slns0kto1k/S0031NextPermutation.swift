@@ -16,13 +16,13 @@ func nextPermutation(_ nums: inout [Int]) {
 
     let decreasingSequences = findDecreasingSequences(&nums)
     if decreasingSequences < 0 {
-        reverseSorted(&nums, from: 0, to: nums.count - 1)
+        reverseSorted(&nums, start: 0, end: nums.count - 1)
         return
     } else {
         let anchor = decreasingSequences
         let insertIndex = findInsertIndex(&nums, anchor: anchor)
         nums.swapAt(anchor, insertIndex)
-        reverseSorted(&nums, from: anchor + 1, to: nums.count - 1)
+        reverseSorted(&nums, start: anchor + 1, end: nums.count - 1)
     }
 }
 
@@ -49,9 +49,9 @@ func findInsertIndex(_ nums: inout [Int], anchor: Int) -> Int {
     return cur
 }
 
-func reverseSorted(_ nums: inout [Int], from: Int, to: Int) {
-    var start = from
-    var end = to
+func reverseSorted(_ nums: inout [Int], start: Int, end: Int) {
+    var start = start
+    var end = end
     while start < end {
         nums.swapAt(start, end)
         start += 1

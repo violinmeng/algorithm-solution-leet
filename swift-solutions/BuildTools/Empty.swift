@@ -1,1 +1,1 @@
-// swiftlint:disable all
+// swiftlint:disable:this all

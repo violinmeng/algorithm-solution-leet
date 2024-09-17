@@ -98,4 +98,4 @@ func multiply3(_ num1: String, _ num2: String) -> String {
         }
 }
 
-// TODO: There are more performance approach for this problem, and that is FFT
+// There are more performance approach for this problem, and that is FFT
