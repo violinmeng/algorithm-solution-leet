@@ -58,6 +58,18 @@ final class SwiftSolutionsTests: XCTestCase {
         XCTAssertEqual(res, expect)
     }
 
+    func testS0097InterleaveString() throws {
+        XCTAssertEqual(isInterleave("aabcc", "dbbca", "aadbbcbcac"), true)
+        XCTAssertEqual(isInterleave("aabcc", "dbbca", "aadbbbaccc"), false)
+        XCTAssertEqual(isInterleave("", "", ""), true)
+        XCTAssertEqual(isInterleaveV2("aabcc", "dbbca", "aadbbcbcac"), true)
+        XCTAssertEqual(isInterleaveV2("aabcc", "dbbca", "aadbbbaccc"), false)
+        XCTAssertEqual(isInterleaveV2("", "", ""), true)
+        XCTAssertEqual(isInterleaveV3("aabcc", "dbbca", "aadbbcbcac"), true)
+        XCTAssertEqual(isInterleaveV3("aabcc", "dbbca", "aadbbbaccc"), false)
+        XCTAssertEqual(isInterleaveV3("", "", ""), true)
+    }
+
     func testS0279PerfectSquares() throws {
         XCTAssertEqual(numSquares(12), 3)
         XCTAssertEqual(numSquares(13), 2)

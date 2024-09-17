@@ -28,3 +28,7 @@ print(clearDigits("cb34"))
 print(clearDigits("abc"))
 
 print(LinkList(head: reverseBetween(LinkList.from(array: [1, 2, 3, 4, 5]).head, 2, 4)))
+
+print(isInterleaveV3("aabcc", "dbbca", "aadbbcbcac"))
+print(isInterleaveV3("aabcc", "dbbca", "aadbbbaccc"))
+print(isInterleaveV3("", "", ""))
