@@ -14,4 +14,8 @@ final class SwiftSolutionsTests: XCTestCase {
         XCTAssertEqual(removeStars("erase*****"), "")
         XCTAssertEqual(removeStars("*"), "")
     }
+
+    func testS2414LongestContinuousSubstring() throws {
+        XCTAssertEqual(longestContinuousSubstring("abacde"), 3)
+    }
 }

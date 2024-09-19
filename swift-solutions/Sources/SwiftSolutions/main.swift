@@ -3,6 +3,7 @@
 
 import Base
 import Slns0kTo1k
+import Slns2kTo3k
 import Slns3kTo4k
 
 print(LinkList(with: [1, 2, 3, 4, 5]))
@@ -34,3 +35,5 @@ print(isInterleaveV3("aabcc", "dbbca", "aadbbbaccc"))
 print(isInterleaveV3("", "", ""))
 
 print(Int(Int32.min))
+
+print(longestContinuousSubstring("abacde"))
