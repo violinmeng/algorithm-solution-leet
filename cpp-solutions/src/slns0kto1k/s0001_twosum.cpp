@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <unordered_map>
+#include "slns0kto1k.h"
 
 //clang++ -std=c++11 -stdlib=libc++ -Weverything 0001-twosum.cpp
 /*
@@ -45,14 +45,4 @@ void printVector(vector<int> &vec)
         cout << i << ' ';
     }
     cout << endl;
-}
-
-int main ()
-{
-    vector<int> inp = {2,7,11,15};
-    int target = 9;
-    vector<int> res = twoSum(inp, target);
-//    cout << res[0] << " " << res[1] <<endl;
-    printVector(res);
-    return 0;
 }
