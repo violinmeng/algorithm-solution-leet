@@ -1,5 +1,5 @@
 // The key to solve this problem is determining how to identify whether two strings are anagrams
-// The intuitive way is convert the strings to an unified form, 
+// The intuitive way is convert the strings to an unified form,
 // and if the two strings have the same form, they are anagrams
 // so we can transform them by sorting each of the strings in alphabet order.
 // when we consider the sort algorithm, the counting algorithm will be more efficiency in this case.

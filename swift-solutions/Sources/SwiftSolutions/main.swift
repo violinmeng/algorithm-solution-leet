@@ -37,3 +37,5 @@ print(isInterleaveV3("", "", ""))
 print(Int(Int32.min))
 
 print(longestContinuousSubstring("abacde"))
+
+print(LinkList(head: mergeNodes(LinkList.from(array: [0, 3, 1, 0, 4, 5, 2, 0]).head)))
