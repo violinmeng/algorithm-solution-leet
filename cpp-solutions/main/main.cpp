@@ -1,14 +1,20 @@
 #include <iostream>
+#include <vector>
+#include <exception>
+#include "slns0kto1k.h"
 
-#include "../src/slns0kto1k/slns0kto1k.h"
-#include "base/ListNode.h"
+static const int target = 9;
 
 int main()
 {
-  std::cout << "LeetCode Solutions Runner" << std::endl;
-  std::vector<int> inp = { 2, 7, 11, 15 };
-  int target = 9;
-  std::vector<int> res = twoSum(inp, target);
-  printVector(res);
-  return 0;
+  std::cout << "LeetCode Solutions Runner" << "\n";
+  try {
+    const std::vector<int> inp = { 2, 7, 11, 15 };
+    const std::vector<int> res = twoSum(inp, target);
+    printVector(res);
+    return 0;
+  } catch (const std::exception &e) {
+    std::cerr << "Error: " << e.what() << "\n";
+    return 1;
+  }
 }
