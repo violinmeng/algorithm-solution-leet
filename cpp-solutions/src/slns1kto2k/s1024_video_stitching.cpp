@@ -1,6 +1,6 @@
-#include <vector>
-#include <climits>
 #include <algorithm>
+#include <climits>
+#include <vector>
 using namespace std;
 
 int videoStitching(vector<vector<int>> &clips, int time)

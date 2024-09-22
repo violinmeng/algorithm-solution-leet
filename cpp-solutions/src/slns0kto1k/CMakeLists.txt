@@ -2,6 +2,7 @@ add_library(slns0kto1k STATIC
     include/slns0kto1k.h
     s0001_twosum.cpp
     s0002_add_two_numbers.cpp
+    s0003_length_of_longest_substring.cpp
 )
 
 target_link_libraries(slns0kto1k PUBLIC base)

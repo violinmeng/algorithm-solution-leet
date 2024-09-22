@@ -1,12 +1,10 @@
 #include <iostream>
 #include <vector>
 
-#include "longestPalindrome.h"
-
 using namespace std;
 
-string Solution::longestPalindrome(string s) {
-           int length = s.size();
+string longestPalindrome(string s) {
+        int length = s.size();
         if (length < 2)
         {
             return s;

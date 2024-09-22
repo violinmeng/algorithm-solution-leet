@@ -1,7 +1,7 @@
+#include "base/ListNode.h"
+#include "slns0kto1k.h"
 #include <gtest/gtest.h>
 #include <vector>
-#include "slns0kto1k.h"
-#include "base/ListNode.h"
 TEST(SolutionsTest, TwoSum)
 {
   const std::vector<int> inp = { 2, 7, 11, 15 };
@@ -21,3 +21,5 @@ TEST(SolutionsTest, AddTwoNumbers)
   const base::LinkedList<int> res = addTwoNumbers(list1, list2);
   EXPECT_EQ(res, expected);
 }
+
+TEST(SolutionsTest, LengthOfLongestSubstring) { EXPECT_EQ(lengthOfLongestSubstring("pwkeabw"), 6); }

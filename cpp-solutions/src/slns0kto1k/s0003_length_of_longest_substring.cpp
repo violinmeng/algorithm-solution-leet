@@ -1,8 +1,6 @@
-#include <iostream>
-#include <vector>
+#include <algorithm>
+#include <array>
 #include <string>
-
-//clang++ -std=c++11 -stdlib=libc++ -Weverything 0001-twosum.cpp
 /*
 无重复字符的最长子串
  滑动窗口；
@@ -12,30 +10,19 @@
 */
 using namespace std;
 
-int lengthOfLongestSubstring(string s) {
-    // 这里用做一个字典，记录一个字母，上次出现的位置
-    int m[128] = {0};
+static const int ascii_size = 128;
 
-    int ans = 0;
-    int lo = 0;
-    int size = s.size();
-    for (int hi = 0; hi < size; hi++)
-    {
-        lo = max(lo, m[s[hi]]);
-        m[s[hi]] = hi+1;
-        ans = max(ans, hi-lo+1);
-    }
-    return ans;
-}
-
-int main ()
+int lengthOfLongestSubstring(const string &str)
 {
-    string s = "pwkeabw";
-    // p hi=0 lo=0 m[p]=0 ans=1
-    // w hi=1 lo=0 m[p]=0 m[w]=1, ans=2
+  // 这里用做一个字典，记录一个字母，上次出现的位置
+  array<int, ascii_size> map = { 0 };
 
-    int length = lengthOfLongestSubstring(s);
-
-    cout << length << endl;
-    
+  int ans = 0;
+  int left = 0;
+  for (int right = 0; right < str.size(); right++) {
+    left = max(left, map.at(static_cast<unsigned char>(str[right])));
+    map.at(static_cast<unsigned char>(str[right])) = right + 1;
+    ans = max(ans, right - left + 1);
+  }
+  return ans;
 }

@@ -3,57 +3,43 @@
 
 using namespace std;
 
-int threeSumClosest(vector<int>& nums, int target) {
-    sort(nums.begin(), nums.end());
-    
-    int n = nums.size();
+int threeSumClosest(vector<int> &nums, int target)
+{
+  sort(nums.begin(), nums.end());
 
-    int res = 1e7; // res-target should not overflow.
+  int n = nums.size();
 
-    auto update = [&](int cur) {
-        if (abs(cur - target) < abs(res - target))
-        {
-            res = cur;
-        }
-    };
+  int res = 1e7;// res-target should not overflow.
 
-    for (int first = 0; first < n; first++)
-    {
-        if (first > 0 && nums[first] == nums[first - 1]) {
-            continue;
-        }
+  auto update = [&](int cur) {
+    if (abs(cur - target) < abs(res - target)) { res = cur; }
+  };
 
-        int second = first + 1;
-        int third = n - 1;
+  for (int first = 0; first < n; first++) {
+    if (first > 0 && nums[first] == nums[first - 1]) { continue; }
 
-        while (second < third)
-        {
-            int sum = nums[second] + nums[third] + nums[first];
-            update(sum);
-            if (sum < target)
-            {
-                int nsecond = second + 1;
-                while (nsecond < third && nums[nsecond] == nums[second])
-                {
-                    nsecond++;
-                }
-                second = nsecond;
-                
-                
-            } else if (sum > target) {
+    int second = first + 1;
+    int third = n - 1;
 
-                int nthird = third - 1;
-                while (second < nthird && nums[nthird] == nums[third])
-                {
-                    --nthird;
-                }
-                third = nthird;
-            } else {
-                return target;
-            }
-        }
+    while (second < third) {
+      int sum = nums[second] + nums[third] + nums[first];
+      update(sum);
+      if (sum < target) {
+        int nsecond = second + 1;
+        while (nsecond < third && nums[nsecond] == nums[second]) { nsecond++; }
+        second = nsecond;
+
+
+      } else if (sum > target) {
+
+        int nthird = third - 1;
+        while (second < nthird && nums[nthird] == nums[third]) { --nthird; }
+        third = nthird;
+      } else {
+        return target;
+      }
     }
-    
-    return res;
+  }
 
+  return res;
 }
