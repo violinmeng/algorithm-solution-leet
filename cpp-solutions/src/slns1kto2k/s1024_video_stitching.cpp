@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-int videoStitching(vector<vector<int>> &clips, int time)
+int videoStitching(const vector<vector<int>> &clips, int time)
 {
   vector<int> vec(time + 1, INT_MAX - 1);
 

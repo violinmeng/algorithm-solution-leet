@@ -1,26 +1,16 @@
-#include <iostream>
+#include <cstddef>
 #include <vector>
 
 using namespace std;
 
-
-int findInMountainArray(int target, vector<int> &mountainArr)
-{
-  int peek = findPeek(mountainArr);
-  int idx = binarySearch(mountainArr, target, 0, peek, [](int x) { return x; });
-  if (idx != -1) { return idx; }
-  return binarySearch(mountainArr, target, peek + 1, mountainArr.size() - 1, [](int x) { return -x; });
-}
-
-
-int binarySearch(vector<int> &mountainArr, int target, int left, int right, int key(int))
+int binarySearch(int target, const vector<int> &mountainArr, size_t left, size_t right, int key(int))
 {
   target = key(target);
   while (left <= right) {
-    int mid = (left + right) >> 1;
-    int cur = key(mountainArr[mid]);
+    const size_t mid = (left + right) >> 1U;
+    const int cur = key(mountainArr[mid]);
     if (cur == target) {
-      return mid;
+      return static_cast<int>(mid);
     } else if (cur < target) {
       left = mid + 1;
     } else {
@@ -30,11 +20,12 @@ int binarySearch(vector<int> &mountainArr, int target, int left, int right, int 
   return -1;
 }
 
-int findPeek(vector<int> &mountainArr)
+size_t findPeek(const vector<int> &mountainArr)
 {
-  int left = 0, right = mountainArr.size() - 1;
+  size_t left = 0;
+  size_t right = mountainArr.size() - 1;
   while (left < right) {
-    int mid = (left + right) >> 1;
+    const size_t mid = (left + right) >> 1U;
     if (mountainArr[mid] < mountainArr[mid + 1]) {
       left = mid + 1;
     } else {
@@ -44,9 +35,10 @@ int findPeek(vector<int> &mountainArr)
   return left;
 }
 
-int main()
+int findInMountainArray(int target, const vector<int> &mountainArr)
 {
-  vector<int> vec = { 1, 2, 3, 4, 5, 3, 1 };
-  cout << findInMountainArray(3, vec) << endl;
-  return 0;
+  const size_t peek = findPeek(mountainArr);
+  const int idx = binarySearch(target, mountainArr, 0, peek, [](int x) { return x; });
+  if (idx != -1) { return idx; }
+  return binarySearch(target, mountainArr, peek + 1, mountainArr.size() - 1, [](int x) { return -x; });
 }
