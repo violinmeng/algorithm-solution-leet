@@ -1,4 +1,4 @@
-#include "base/ListNode.h"
+#include "base/LinkedList.h"
 #include "slns0kto1k.h"
 #include "slns1kto2k.h"
 #include <exception>
@@ -20,6 +20,14 @@ void main0kto1k()
   addTwoNumbers(list1, list2).print();
 
   std::cout << lengthOfLongestSubstring("pwkeabw") << "\n";
+
+  const int x = 123;
+  std::cout << reverse(x) << "\n";
+
+  base::LinkedList<int> list3 = { 1, 2, 3 };
+  iterateReverse(list3);
+  list3.print();
+  // recusiveReverse(list3).print();
 }
 
 void main1kto2k()

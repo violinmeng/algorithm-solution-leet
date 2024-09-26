@@ -1,4 +1,4 @@
-#include "base/ListNode.h"
+#include "base/LinkedList.h"
 #include "slns0kto1k.h"
 #include <gtest/gtest.h>
 #include <vector>
@@ -23,3 +23,10 @@ TEST(SolutionsTest, AddTwoNumbers)
 }
 
 TEST(SolutionsTest, LengthOfLongestSubstring) { EXPECT_EQ(lengthOfLongestSubstring("pwkeabw"), 6); }
+
+TEST(SolutionsTest, Reverse)
+{
+  const int x = 123;
+  const int expected = 321;
+  EXPECT_EQ(reverse(x), expected);
+}

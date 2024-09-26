@@ -13,10 +13,11 @@ public:
   T val;
   std::unique_ptr<ListNode<T>> next;
   ListNode(T value) : val(value), next(nullptr) {}
-
+  // this will copy this node and successors nodes.
   ListNode(const ListNode<T> &other) : val(other.val), next(nullptr)
   {
     if (other.next) { next = std::make_unique<ListNode<T>>(*other.next); }
+    std::cout << "Copy constructing node with value: " << val << "\n";
   }
 
   ListNode &operator=(const ListNode<T> &other)
@@ -24,6 +25,17 @@ public:
     if (this != &other) {
       val = other.val;
       next = other.next ? std::make_unique<ListNode<T>>(*other.next) : nullptr;
+    }
+    std::cout << "Copy assigning node with value: " << val << "\n";
+    return *this;
+  }
+
+  ListNode(ListNode<T> &&other) noexcept : val(other.val), next(std::move(other.next)) {}
+  ListNode &operator=(ListNode<T> &&other) noexcept
+  {
+    if (this != &other) {
+      val = other.val;
+      next = std::move(other.next);
     }
     return *this;
   }
@@ -47,11 +59,14 @@ public:
 
   LinkedList(ListNode<T> *_head)
   {
-    while (_head) {
-      append(_head->val);
-      _head = _head->next.get();
-    }
+    head = std::make_unique<ListNode<T>>(*_head);
+    // while (_head) {
+    //   append(_head->val);
+    //   _head = _head->next.get();
+    // }
   }
+
+  LinkedList(std::unique_ptr<ListNode<T>> _head) : head(std::move(_head)) {}
 
   LinkedList(const LinkedList<T> &other) : head(nullptr)
   {
@@ -100,6 +115,21 @@ public:
   }
   // 获取头节点指针
   ListNode<T> *getHead() const { return head.get(); }
+
+  void reverse()
+  { 
+    // the code below will copy all the nodes, which is not what we want.
+    // auto dummyPtr = std::make_unique<ListNode<T>>(*head);
+    std::unique_ptr<ListNode<T>> tmp1 = std::move(head);
+    std::unique_ptr<ListNode<T>> tmp2 = std::move(tmp1.get()->next);
+    ListNode<T> *iter = tmp2.get();
+    while (iter) {
+      std::swap(iter->next, tmp1);
+      std::swap(tmp1, tmp2);
+      iter = tmp2.get();
+    }
+    head = std::move(tmp1);
+  }
 
   bool operator==(const LinkedList<T> &other) const
   {

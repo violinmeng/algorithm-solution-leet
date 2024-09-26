@@ -1,4 +1,4 @@
-#include "base/ListNode.h"
+#include "base/LinkedList.h"
 #include <memory>
 
 // clang++ -std=c++11 -stdlib=libc++ -Weverything 0001-twosum.cpp

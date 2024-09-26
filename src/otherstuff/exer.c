@@ -37,9 +37,6 @@ bool duplicate(int numbers[], int length, int *duplication) {
 
 }
 
-
-
-
 int main() {
 	int test[] = {2,3,1,0,2,5,3};
 	int duplication = 0;
