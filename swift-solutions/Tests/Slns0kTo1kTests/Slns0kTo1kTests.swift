@@ -27,6 +27,16 @@ final class SwiftSolutionsTests: XCTestCase {
         XCTAssertEqual(lengthOfLongestSubstring("pwwkew"), 3)
     }
 
+    func testS0007ReverseInt() throws {
+        XCTAssertEqual(reverseInt(123), 321)
+        XCTAssertEqual(reverseInt(-123), -321)
+        XCTAssertEqual(reverseInt(120), 21)
+        XCTAssertEqual(reverseInt(Int.max), 7085774586302733229)
+        XCTAssertEqual(reverseInt(Int.min), -8085774586302733229)
+        XCTAssertEqual(reverseInt(8223372036854775839), Int.max)
+        XCTAssertEqual(reverseInt(-8223372036854775839), Int.min)
+    }
+
     func testS0008StringToIntegerAtoi() throws {
         XCTAssertEqual(myAtoi("42"), 42)
         XCTAssertEqual(myAtoi("   -42"), -42)

@@ -39,3 +39,11 @@ print(Int(Int32.min))
 print(longestContinuousSubstring("abacde"))
 
 print(LinkList(head: mergeNodes(LinkList.from(array: [0, 3, 1, 0, 4, 5, 2, 0]).head)))
+
+print(reverseInt(123))
+print(reverseInt(-123))
+print(reverseInt(120))
+print(reverseInt(Int.max))
+print(reverseInt(Int.min))
+print(reverseInt(8223372036854775839))
+print(reverseInt(-8223372036854775839))
