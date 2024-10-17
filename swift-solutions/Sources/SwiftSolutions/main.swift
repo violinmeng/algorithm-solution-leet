@@ -5,6 +5,7 @@ import Base
 import Slns0kTo1k
 import Slns2kTo3k
 import Slns3kTo4k
+import SlnsLCR
 
 print(LinkList(with: [1, 2, 3, 4, 5]))
 
@@ -47,3 +48,5 @@ print(reverseInt(Int.max))
 print(reverseInt(Int.min))
 print(reverseInt(8223372036854775839))
 print(reverseInt(-8223372036854775839))
+
+print(trainWays(95))

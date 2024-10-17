@@ -29,6 +29,10 @@ let package = Package(
             name: "Slns3kTo4k",
             targets: ["Slns3kTo4k"]
         ),
+        .library(
+            name: "SlnsLCR",
+            targets: ["SlnsLCR"]
+        ),
 
         .library(
             name: "Base",
@@ -49,6 +53,7 @@ let package = Package(
                 "Slns1kTo2k",
                 "Slns2kTo3k",
                 "Slns3kTo4k",
+                "SlnsLCR",
                 "Base"
             ]
         ),
@@ -67,6 +72,10 @@ let package = Package(
         ),
         .target(
             name: "Slns3kTo4k",
+            dependencies: ["Base"]
+        ),
+        .target(
+            name: "SlnsLCR",
             dependencies: ["Base"]
         ),
         .target(
@@ -92,6 +101,10 @@ let package = Package(
         .testTarget(
             name: "Slns3kTo4kTests",
             dependencies: ["Slns3kTo4k"]
+        ),
+        .testTarget(
+            name: "SlnsLCRTests",
+            dependencies: ["SlnsLCR"]
         )
     ]
 )

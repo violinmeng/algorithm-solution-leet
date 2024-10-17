@@ -91,6 +91,20 @@
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SlnsLCR"
+               BuildableName = "SlnsLCR"
+               BlueprintName = "SlnsLCR"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -147,6 +161,16 @@
                BlueprintIdentifier = "Slns3kTo4kTests"
                BuildableName = "Slns3kTo4kTests"
                BlueprintName = "Slns3kTo4kTests"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SlnsLCRTests"
+               BuildableName = "SlnsLCRTests"
+               BlueprintName = "SlnsLCRTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
