@@ -2,6 +2,7 @@
 #include "slns0kto1k.h"
 #include <gtest/gtest.h>
 #include <vector>
+#include <string>
 TEST(SolutionsTest, TwoSum)
 {
   const std::vector<int> inp = { 2, 7, 11, 15 };
@@ -29,4 +30,12 @@ TEST(SolutionsTest, Reverse)
   const int x = 123;
   const int expected = 321;
   EXPECT_EQ(reverse(x), expected);
+}
+
+TEST(SolutionsTest, IntToRoman)
+{
+  const int x = 1994;
+  const std::string expected = "MCMXCIV";
+  EXPECT_EQ(intToRoman(x), expected);
+  EXPECT_EQ(intToRomanV1(x), expected);
 }

@@ -1,3 +1,4 @@
+#include "slns0kto1k.h"
 #include <algorithm>
 #include <array>
 #include <string>

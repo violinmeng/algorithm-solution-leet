@@ -4,7 +4,6 @@
 
 #include "slns0kto1k.h"
 
-
 /**
  * given a array with a bunch of numbers and a target numbers
  * find the indexs of the two numbers which num

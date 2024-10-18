@@ -1,8 +1,9 @@
 #include <cstddef>
 #include <vector>
-
+#include "slns1kto2k.h"
 using namespace std;
 
+namespace {
 int binarySearch(int target, const vector<int> &mountainArr, size_t left, size_t right, int key(int))
 {
   target = key(target);
@@ -33,6 +34,7 @@ size_t findPeek(const vector<int> &mountainArr)
     }
   }
   return left;
+}
 }
 
 int findInMountainArray(int target, const vector<int> &mountainArr)

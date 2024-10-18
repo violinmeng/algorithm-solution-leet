@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <climits>
 #include <vector>
+#include "slns1kto2k.h"
 using namespace std;
 
 int videoStitching(const vector<vector<int>> &clips, int time)

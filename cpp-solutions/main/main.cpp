@@ -7,6 +7,7 @@
 
 static const int target = 9;
 
+namespace {
 void main0kto1k()
 {
   const std::vector<int> inp = { 2, 7, 11, 15 };
@@ -28,6 +29,10 @@ void main0kto1k()
   iterateReverse(list3);
   list3.print();
   // recusiveReverse(list3).print();
+
+  const int tNumber = 1994;
+  std::cout << intToRoman(tNumber) << "\n";
+  std::cout << intToRomanV1(tNumber) << "\n";
 }
 
 void main1kto2k()
@@ -40,6 +45,7 @@ void main1kto2k()
 
   const std::vector<int> vec2 = { 1, 2, 3, 4, 5, 3, 1 };
   std::cout << findInMountainArray(3, vec2) << "\n";
+}
 }
 
 int main()

@@ -5,6 +5,7 @@ add_library(slns0kto1k STATIC
     s0003_length_of_longest_substring.cpp
     s0007_reverse_int.cpp
     s0206_reverse_list.cpp
+    s0012_int_to_roman.cpp
 )
 
 target_link_libraries(slns0kto1k PUBLIC base)

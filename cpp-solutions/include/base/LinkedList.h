@@ -117,7 +117,7 @@ public:
   ListNode<T> *getHead() const { return head.get(); }
 
   void reverse()
-  { 
+  {
     // the code below will copy all the nodes, which is not what we want.
     // auto dummyPtr = std::make_unique<ListNode<T>>(*head);
     std::unique_ptr<ListNode<T>> tmp1 = std::move(head);

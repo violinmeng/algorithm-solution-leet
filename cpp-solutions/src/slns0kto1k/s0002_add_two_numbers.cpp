@@ -1,13 +1,12 @@
 #include "base/LinkedList.h"
+#include "slns0kto1k.h"
 #include <memory>
-
 // clang++ -std=c++11 -stdlib=libc++ -Weverything 0001-twosum.cpp
 /*
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 */
-using namespace std;
 using namespace base;
 
 static const int ten = 10;
